@@ -11,7 +11,7 @@ var split = function() {
     })
 };
 
-function Rethink2Csv = function(opts) {
+function Rethink2Csv(opts) {
     var defaults = {
         csv: {
             separator: ',',
