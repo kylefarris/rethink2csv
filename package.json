@@ -1,0 +1,33 @@
+{
+  "name": "rethink2csv",
+  "version": "0.0.1",
+  "description": "Allows you to stream any query from rethinkdb to a CSV file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylefarris/rethink2csv.git"
+  },
+  "keywords": [
+    "rethinkdb",
+    "csv",
+    "json",
+    "stream",
+    "rethinkdbdash"
+  ],
+  "author": "kyle@chomponllc.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kylefarris/rethink2csv/issues"
+  },
+  "homepage": "https://github.com/kylefarris/rethink2csv#readme",
+  "dependencies": {
+    "JSONStream": "^1.1.2",
+    "csv-write-stream": "^2.0.0",
+    "lodash.functionsin": "^4.1.1",
+    "stream-json-stringify": "^0.1.0",
+    "through2": "^2.0.1"
+  }
+}
