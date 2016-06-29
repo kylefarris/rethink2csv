@@ -1,6 +1,6 @@
 {
   "name": "rethink2csv",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Allows you to stream any query from rethinkdb to a CSV file.",
   "main": "index.js",
   "scripts": {
