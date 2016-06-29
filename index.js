@@ -30,13 +30,13 @@ function Rethink2Csv(opts) {
 // Stream a query result as CSV to an writeable stream (say, ExpressJS result
 // object or file stream)
 // ----
-// @param   Object      query       An RethinkDB Dash query object
-// @param   Object      out         The writeable stream
-// @param   Function`   cb          What to do on error and/or when done streaming
+// @param   Object      query   An RethinkDB Dash query object
+// @param   Object      out     The writeable stream
+// @param   Function    cb      (optional) What to do on error and/or when done streaming
 // ****************************************************************************
 Rethink2Csv.prototype.generate_csv = function (query, out, cb) {
     if (typeof query !== 'function' || lo_functions(query).indexOf('toStream') === -1)
-        return cb(Error('Invalid rethinkdb query object supplied'), null);
+        return cb(Error('Invalid rethinkdbdash query object supplied'), null);
 
     var csv_writer = csv_write_stream(this.csv_opts);
 
@@ -47,7 +47,8 @@ Rethink2Csv.prototype.generate_csv = function (query, out, cb) {
         .pipe(csv_writer)
         .pipe(out)
         .on('finish', function() {
-            return cb(null, {msg: 'Done writing query result to output stream!'});
+            if (cb && typeof cb === 'function')
+                return cb(null, {msg: 'Done writing query result to output stream!'});
         });
 };
 
